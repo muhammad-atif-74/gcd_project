@@ -1,0 +1,165 @@
+@media screen and (max-width: 1020px) {
+    .navigation {
+        top: 100px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        margin-inline: auto;
+        width: min(96%, 80rem);
+        /* border: solid tomato; */
+    }
+
+    .formcontainer {
+        gap: 0 10px;
+        flex-direction: column-reverse;
+    }
+
+    .formcontainer .contactform {
+        width: 100%;
+    }
+
+    .formcontainer .contactinfo {
+        width: 100%;
+    }
+
+    /* project page  */
+    .project-card .project-image{
+        height: 270px;
+        width: 90%;
+        overflow: hidden;
+      }
+      .project-card .project-description{
+        height: 350px;
+      }
+}
+
+@media screen and (max-width: 785px) {
+    .topbar {
+        display: none;
+    }
+
+    .navigation {
+        position: absolute;
+        top: -500px;
+        border-radius: 0;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        transition: all 0.2s;
+    }
+
+    .barsicon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #fff;
+        z-index: 10;
+        cursor: pointer;
+        display: block;
+    }
+
+    .closeicon.show {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #fff;
+        z-index: 10;
+        cursor: pointer;
+        display: block;
+    }
+
+    .navigation .split {
+        flex-direction: column;
+    }
+
+    .navigation .links,
+    .navigation .create-account {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+    }
+
+    .links .link,
+    .navigation li {
+        margin-right: 0;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* project page  */
+    .project-grid{
+        grid-template-columns: 12fr;
+        gap: 0;
+      }
+
+      /* about page  */
+      .aboutcompany .split{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 25px 0;
+      }
+      .aboutcompany .image, .aboutcompany .content{
+        width: 100%;
+      }
+
+}
+
+@media screen and (max-width: 700px) {
+    .slider{
+        background-size: 350% 100%;
+        background-position: 42% 25%;
+        background-repeat: no-repeat;
+    }
+    .aboutus{
+        background-position: 25% 25%;
+    }
+    .navigation {
+        width: 80%;
+    }
+    .attributes {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aboutsection .split {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 20px 0;
+    }
+
+    .aboutsection .image,
+    .aboutsection .content {
+        width: 100%;
+    }
+
+    .footer-distributed {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .slider .content {
+        padding: 0 1rem;
+    }
+    .chaticon{
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+    }
+    .chatdialog{
+        position: fixed;
+        width: 320px;
+        height: 450px;
+        bottom: -500px;
+        right: 15px;
+    }
+}

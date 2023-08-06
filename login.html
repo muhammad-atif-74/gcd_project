@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>GCD | Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="css/login.css">
+
+	<link rel="shortcut icon" href="assets/gcd_logo.jpg" type="image/x-icon">
+
+</head>
+
+<body>
+	<section class="">
+		<div class="container mt-3">
+			<div class="row justify-content-center ">
+				<div class="col-md-12 col-lg-10 mt-5">
+					<div class="alert alert-warning invisible" id="alert" role="alert">
+
+					</div>
+					<div class="alert alert-warning d-none" id="waitLoader" role="alert"
+							style="height: 100px; overflow: hidden;">
+							<div class="lds-ellipsis" id="chatloader">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+					<div class="wrap d-md-flex">
+						<div class="img" style="background-image: url(assets/aboutCompany.jpg);">
+						</div>
+						<div class="login-wrap p-4 p-md-5">
+							<div class="d-flex">
+								<div class="w-100">
+									<h3 class="mb-4">Login</h3>
+								</div>
+							</div>
+							<div class="login-form">
+								<div class="form-group mb-3">
+									<label class="label" for="name">Email</label>
+									<input type="email" id="email" class="form-control email" name="email" placeholder="Email" required>
+								</div>
+								<div class="form-group mb-3">
+									<label class="label" for="password">Password</label>
+									<input type="password" class="form-control password" id="password" name="password" placeholder="Password (min 6 characters)" required style="position: relative;">
+									<i class="fa fa-eye float-right" id="show" style="position: absolute; right: 15px; top: 50px; cursor: pointer;"></i>
+								</div>
+								<div class="form-group">
+									<button class="form-control btn btn-primary rounded submit px-3" name="login" onclick="login(event)">Login</button>
+								</div>
+								<div class="form-group d-md-flex">
+								</div>
+							</div>
+							<p class="text-center">Not a member? <a data-toggle="tab" href="register.html">Sign Up</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-storage.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-functions.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+
+	<script src="js/firebase.js"></script>
+	<script src="js/login.js"></script>
+</body>
+
+</html>

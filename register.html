@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<title>GCD | Register</title>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link
+			href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+			rel="stylesheet">
+
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<link rel="stylesheet" href="css/login.css">
+
+		<link rel="shortcut icon" href="assets/gcd_logo.jpg" type="image/x-icon">
+
+	</head>
+
+	<body>
+		<section class>
+			<div class="container mt-5">
+				<div class="row justify-content-center ">
+					<div class="col-md-12 col-lg-10 mt-0">
+						<div class="alert alert-warning invisible" id="alert" role="alert">
+
+						</div>
+						<div class="alert alert-warning d-none" id="waitLoader" role="alert"
+							style="height: 100px; overflow: hidden;">
+							<div class="lds-ellipsis" id="chatloader">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+						</div>
+						<div class="wrap d-md-flex">
+							<div class="img" style="background-image: url(assets/aboutCompany.jpg);">
+							</div>
+							<div class="login-wrap p-4 p-md-5">
+								<div class="d-flex justify-content-center align-items-center">
+									<div class="w-100">
+										<h3 class="mb-4">Register</h3>
+									</div>
+								</div>
+								<div class="register-form">
+									<div class="form-group mb-3">
+										<label class="label" for="name">Username</label>
+										<input type="text" class="form-control username" name="username"
+											id="username" placeholder="Username" required>
+									</div>
+									<div class="form-group mb-3">
+										<label class="label" for="name">Email</label>
+										<input type="email" class="form-control email" name="email" id="email"
+											placeholder="Email" required>
+									</div>
+									<div class="form-group mb-3">
+										<label class="label" for="password">Password</label>
+										<input type="password" class="form-control password" name="password"
+											id="password" placeholder="Password (min 6 characters)" required
+											style="position: relative;">
+										<i class="fa fa-eye float-right" id="show"
+											style="position: absolute; right: 15px; top: 50px; cursor: pointer;"></i>
+									</div>
+									<div class="form-group">
+										<button name="register"
+											class="form-control btn btn-primary rounded submit px-3"
+											onclick="register(event)">Register</button>
+									</div>
+									<div class="form-group d-md-flex">
+										<!-- <div class="w-50 text-left">
+										<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+											<input type="checkbox" checked>
+											<span class="checkmark"></span>
+										</label>
+									</div>
+									<div class="w-50 text-md-right">
+										<a href="#">Forgot Password</a>
+									</div> -->
+									</div>
+								</div>
+								<p class="text-center">Already have account ? <a data-toggle="tab"
+										href="login.html">Login</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-storage.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-functions.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+		<script src="js/firebase.js"></script>
+		<script src="js/login.js"></script>
+
+	</body>
+
+</html>
