@@ -176,7 +176,7 @@ function websiteSettings(data) {
     console.log(data)
     let companyLogo = document.querySelector(".companyLogo");
     let phoneNumber = document.querySelector(".phoneNumber");
-    let title = document.querySelector(".title");
+    let title = document.querySelector("#main_title");
     let slogan = document.querySelector(".slogan");
     let companyPhone = document.querySelector(".companyPhone");
     let companyEmail = document.querySelector(".companyEmail");
