@@ -1,5 +1,5 @@
 .topbar {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     padding: 10px 125px 25px 125px;
 }
 
@@ -30,7 +30,9 @@
 .cell i {
     margin-right: 15px;
     font-size: 30px;
-    color: var(--primary-color);
+    /* color: var(--primary-color); */
+    color: var(--secondary-color);
+
 }
 
 .barsicon, .closeicon{
@@ -549,9 +551,12 @@
 .formcontainer .contactinfo {
     width: 40%;
     padding: 50px 30px;
-    /* background-color: var(--primary-color); */
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    /* background-color: var(--secondary-color); */
     color: var(--white-color);
+}
+.formcontainer .contactinfo .chatBtn{
+    background-color: var(--secondary-color);
 }
 
 .contactinfo .contact-type .split {
@@ -565,7 +570,7 @@
 
 .contactinfo .contact-type i {
     font-size: 26px;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 
 }
 
@@ -580,7 +585,8 @@
 }
 
 .footer-distributed {
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
+    background-color: var(--primary-color);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
@@ -731,6 +737,14 @@
 
   .aboutowner .split{
     flex-direction: row-reverse;
+  }
+
+  .aboutowner .image img{
+    width: 75%;
+
+  }
+  .whyus{
+    align-items: start !important;
   }
 
   /* project page stylung  */
