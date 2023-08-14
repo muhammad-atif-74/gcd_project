@@ -264,8 +264,8 @@ function addNewTestimonialFunction() {
     let designation = document.querySelector("#designation").value;
     let review = document.querySelector("#review").value;
     let fileinput = document.querySelector("#newTestimonialImage");
-    if (review.length == '' || name.length == '') {
-        showAlert("Fields cannot be empty!");
+    if (review.length == '' || name.length == '' || fileinput.value == '') {
+        alert("Fields cannot be empty!");
     }
     else {
         showLoader();
@@ -356,7 +356,7 @@ function showTestimonials(reviews) {
                 </div>
                 <div>
                     <h5>Review</h5>
-                    <textarea name="" class="form-control review" id="review" cols="30" rows="6" style="max-height: 200px;" readonly>${data.review}</textarea>
+                    <textarea name="" class="form-control added_testimonial_review" id="added_review" cols="30" rows="6" style="max-height: 200px;" readonly>${data.review}</textarea>
                 </div>
                     <button class="btn btn-danger deleteTestimonial" data-id="${data.testimonialId}">Delete</button>
             </div>
