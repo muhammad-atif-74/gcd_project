@@ -37,14 +37,15 @@ function populateUsers(data) {
                 user.email,
                 user.businessName,
                 formatDate(user.createdAt),
-                user.isAdmin,
+                // user.isAdmin,
                 // user.role,
                 `${!user.status ? '<i class="fa fa-check text-success fs-5"></i>' : '<i class="fa fa-xmark text-danger fs-5"></i>'}`,
                 `<button class="btn btn-sm btn-primary unblock my-1 ${user.status ? 'disable-a-tag' : ''}" name="unblock" data-id="${user.userid}" ${user.status ? 'disabled' : ''} >Unblock</button>
                  <button class="btn btn-sm btn-danger block  my-1" name="block" data-id="${user.userid}" ${user.status ? '' : 'disabled'}>Block</button>
-                 <button class="btn btn-sm btn-success makeAdmin  my-1" name="block" data-id="${user.userid}" ${user.isAdmin ? 'disabled' : ''} >Make Admin</button>`
+                 `
             ])
             .draw(false);
+            // <button class="btn btn-sm btn-success makeAdmin  my-1" name="block" data-id="${user.userid}" ${user.isAdmin ? 'disabled' : ''} >Make Admin</button>
     })
 
     let unblockBtn = document.querySelectorAll(".unblock");
