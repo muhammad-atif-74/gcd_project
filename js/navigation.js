@@ -199,7 +199,7 @@ function websiteSettings(data) {
 
     companyPhone ? companyPhone.innerHTML = data.phone : '';
     companyEmail ? companyEmail.innerHTML = data.email : '';
-    companyFacebook ? companyFacebook.innerHTML = data.facebook : '';
+    companyFacebook ? companyFacebook.setAttribute("href",data.facebook)  : '';
     campanyNameFooter ? campanyNameFooter.innerHTML = data.websiteName : '';
 
     facebookLink.href = data.facebook;
