@@ -19,7 +19,7 @@ function getProjects() {
 
             let hasProjects = false;
             documents.forEach(bid => {
-                if (bid.userid = userid) {
+                if (bid.userId == userid) {
                     populateTable(bid);
                     hasProjects = true;
                 }
