@@ -107,5 +107,5 @@ function showAlert(msg) {
 	document.querySelector("#alert").classList.replace('invisible', 'visible')
 	setTimeout(() => {
 		document.querySelector("#alert").classList.replace('visible', 'invisible')
-	}, 2000);
+	}, 10000);
 }

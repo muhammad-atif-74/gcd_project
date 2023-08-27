@@ -201,7 +201,7 @@ function showAlert(msg) {
     document.querySelector(".customAlert").classList.replace('invisible', 'visible')
     setTimeout(() => {
         document.querySelector(".customAlert").classList.replace('visible', 'invisible')
-    }, 5000);
+    }, 10000);
 }
 
 function sendMail(email, receiver, subject, body) {

@@ -3,7 +3,7 @@ export function showAlert(msg) {
     document.querySelector(".customAlert").classList.replace('invisible', 'visible')
     setTimeout(() => {
         document.querySelector(".customAlert").classList.replace('visible', 'invisible')
-    }, 4500);
+    }, 10000);
 }
 
 export function showLoader() {
