@@ -43,13 +43,32 @@ function populateTable(bid) {
         .add([
             bid.username,
             bid.message,
-            bid.status?'Approved':'Pending',
+            bid.status ? 'Approved' : 'Pending',
             formatDate(bid.submittedAt),
-            `
-                <a href="${bid.formUrl}" target ="_blank">View Form</a>
-            `
+            `<a href="${bid.formUrl}" target ="_blank">View Form</a>`,
+            `<button class="btn btn-sm btn-danger deleteBtn ms-3" onclick="deleteBid('${bid.bidId}')">Delete Bid</button>`
         ])
         .draw(false);
+}
+
+function deleteBid(id) {
+    let permission = confirm("Are you sure to delete your bid/ project");
+    if (permission) {
+        showLoader()
+        const docRef = firebase.firestore().collection('bids').doc(id)
+        docRef.delete()
+            .then(() => {
+                hideLoader()
+                // console.log('Document deleted successfully');
+                showAlert('Bid/Project Deleted Successfully')
+                window.location.reload()
+            })
+            .catch((error) => {
+                hideLoader()
+                // console.error('Error deleting document:', error);
+                showAlert('Error deleting Bid/Project')
+            });
+    }
 }
 
 

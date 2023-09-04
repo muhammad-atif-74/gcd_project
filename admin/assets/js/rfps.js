@@ -39,7 +39,8 @@ function populateRfpTable(data) {
                 `,
                 formatDate(data.submittedAt),
                 // user.role,
-                `<button class="btn btn-sm btn-primary my-1 unblock ${data.status ? 'disable-a-tag' : ''}" name="unblock" ${data.status ? 'disabled' : ''} onclick="acceptBid('${data.bidId}')">Accept</button>`
+                `<button class="btn btn-sm btn-primary my-1 unblock ${data.status ? 'disable-a-tag' : ''}" name="unblock" ${data.status ? 'disabled' : ''} onclick="acceptBid('${data.bidId}')">Accept</button>
+                <button class="btn btn-sm btn-danger my-1 unblock ${data.status ? '' : 'disable-a-tag'}" name="unblock" ${data.status ? '' : 'disabled'} onclick="rejectBid('${data.bidId}')">Reject</button>`
             ])
             .draw(false);
     })
@@ -59,6 +60,30 @@ function acceptBid(bidId) {
             let data = doc.data();
             let userEmail = data.userEmail;
             sendMail('SiteAdmin@globalconstructionanddemolition.com', userEmail, 'Your bid has been approved.', 'Your bid has been approved.')
+            window.location.reload()
+
+        })
+    })
+        .catch((error) => {
+            hideLoader();
+            showAlert("Error: ", error);
+        });
+}
+
+function rejectBid(bidId) {
+    showLoader();
+    let collectionRef = db.collection("bids");
+    let documentRef = collectionRef.doc(bidId);
+    documentRef.update({
+        status: false
+    }).then(() => {
+        hideLoader();
+        // console.log('done')
+        documentRef.get().then(doc => {
+            let data = doc.data();
+            let userEmail = data.userEmail;
+            sendMail('SiteAdmin@globalconstructionanddemolition.com', userEmail, 'Your bid has been rejected.', 'Your bid has been rejected by admin.')
+            window.location.reload()
         })
     })
         .catch((error) => {
