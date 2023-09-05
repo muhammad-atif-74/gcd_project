@@ -225,7 +225,7 @@ function sendMail(email, receiver, subject, body) {
         redirect: 'follow'
     };
 
-    fetch(`${baseURL}/sendmail.php`, requestOptions)
+    fetch(`${baseURL}sendmail.php`, requestOptions)
         .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));

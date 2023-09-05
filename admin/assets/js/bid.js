@@ -58,6 +58,11 @@ function submitBid() {
                                         hideLoader();
                                         showAlert('Bid successfully Submitted, You will be notified once your bid is approved through email')
                                         message.value = '';
+                                        sendMail(data.email, "SiteAdmin@globalconstructionanddemolition.com",
+                                            "Contractor has just bided on a project",
+                                            `Contractor with ${data.email} has just bided on your website, please check out the contractor details and approve/ unblock its bid. Thanks`)
+
+
                                     })
                                     .catch((error) => {
                                         hideLoader();
@@ -94,4 +99,33 @@ function showLoader() {
 }
 function hideLoader() {
     document.querySelector(".loader").classList.add('d-none');
+}
+
+
+function sendMail(email, receiver, subject, body) {
+    var fullURL = window.location.href;
+    var position = fullURL.indexOf("admin/");
+    var baseURL = fullURL.substr(0, position);
+
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+        "email": email,
+        "receiver": receiver,
+        "subject": subject,
+        "body": body
+    });
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch(`${baseURL}sendmail.php`, requestOptions)
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
 }

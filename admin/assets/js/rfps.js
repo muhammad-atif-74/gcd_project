@@ -60,7 +60,7 @@ function acceptBid(bidId) {
             let data = doc.data();
             let userEmail = data.userEmail;
             sendMail('SiteAdmin@globalconstructionanddemolition.com', userEmail, 'Your bid has been approved.', 'Your bid has been approved.')
-            window.location.reload()
+            // window.location.reload()
 
         })
     })
@@ -83,7 +83,7 @@ function rejectBid(bidId) {
             let data = doc.data();
             let userEmail = data.userEmail;
             sendMail('SiteAdmin@globalconstructionanddemolition.com', userEmail, 'Your bid has been rejected.', 'Your bid has been rejected by admin.')
-            window.location.reload()
+            // window.location.reload()
         })
     })
         .catch((error) => {
@@ -143,7 +143,7 @@ function sendMail(email, receiver, subject, body) {
         redirect: 'follow'
     };
 
-    fetch(`${baseURL}/sendmail.php`, requestOptions)
+    fetch(`${baseURL}sendmail.php`, requestOptions)
         .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));

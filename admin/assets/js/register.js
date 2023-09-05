@@ -93,7 +93,9 @@ function addUserToCollection(collection, userid) {
     })
         .then(() => {
             showAlert('Account Created successfully! Your account will be approved by admin within 24-48 hrs and inform you through email. Thanks')
-            sendMail(userModal.email, "SiteAdmin@globalconstructionanddemolition.com", "Approve user account", `User with ${userModal.email} has created account on your website, please check out the user and approve/ unblock its status. Thanks`)
+            sendMail(userModal.email, "SiteAdmin@globalconstructionanddemolition.com",
+             "Approve user account",
+             `User with ${userModal.email} has created account on your website, please check out the user and approve/ unblock its status. Thanks`)
             // setTimeout(() => {
             //     window.location.href = 'login.html'
             // }, 700);
@@ -226,7 +228,7 @@ function sendMail(email, receiver, subject, body) {
         redirect: 'follow'
     };
 
-    fetch(`${baseURL}/sendmail.php`, requestOptions)
+    fetch(`${baseURL}sendmail.php`, requestOptions)
         .then(response => response.json())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
