@@ -94,8 +94,11 @@ function addUserToCollection(collection, userid) {
         .then(() => {
             showAlert('Account Created successfully! Your account will be approved by admin within 24-48 hrs and inform you through email. Thanks')
             sendMail(userModal.email, "SiteAdmin@globalconstructionanddemolition.com",
-             "Approve user account",
-             `User with ${userModal.email} has created account on your website, please check out the user and approve/ unblock its status. Thanks`)
+                "Approve user account",
+                `User with ${userModal.email} has created account on your website, please check out the user and approve/ unblock its status. Thanks`)
+
+            sendMail('SiteAdmin@globalconstructionanddemolition.com', userModal.email, 'Account Created Successfully.', 'Account Created successfully! Your account will be approved by admin within 24-48 hrs and inform you through email. Thanks')
+
             // setTimeout(() => {
             //     window.location.href = 'login.html'
             // }, 700);
