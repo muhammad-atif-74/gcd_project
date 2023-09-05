@@ -58,7 +58,7 @@ function submitBid() {
                                         hideLoader();
                                         showAlert('Bid successfully Submitted, You will be notified once your bid is approved through email')
                                         message.value = '';
-                                        sendMail(data.email, "SiteAdmin@globalconstructionanddemolition.com",
+                                        sendMail(data.email, "Operations@globalconstrunctionanddemolition.com",
                                             "Contractor has just bided on a project",
                                             `Contractor with ${data.email} has just bided on your website, please check out the contractor details and approve/ unblock its bid. Thanks`)
 
