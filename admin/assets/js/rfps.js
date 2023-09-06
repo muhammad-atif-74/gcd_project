@@ -39,8 +39,8 @@ function populateRfpTable(data) {
                 `,
                 formatDate(data.submittedAt),
                 // user.role,
-                `<button class="btn btn-sm btn-primary my-1 unblock ${data.status ? 'disable-a-tag' : ''}" name="unblock" ${data.status ? 'disabled' : ''} onclick="acceptBid('${data.bidId}')">Accept</button>
-                <button class="btn btn-sm btn-danger my-1 unblock ${data.status ? '' : 'disable-a-tag'}" name="unblock" ${data.status ? '' : 'disabled'} onclick="rejectBid('${data.bidId}')">Reject</button>`
+                `<button class="btn btn-sm btn-primary my-1 unblock " name="unblock"  onclick="acceptBid('${data.bidId}')">Accept</button>
+                <button class="btn btn-sm btn-danger my-1 unblock " name="unblock"  onclick="rejectBid('${data.bidId}')">Reject</button>`
             ])
             .draw(false);
     })
@@ -59,6 +59,7 @@ function acceptBid(bidId) {
         documentRef.get().then(doc => {
             let data = doc.data();
             let userEmail = data.userEmail;
+            showAlert('Bid accepted successfully, Please reload the page the update the record')
             sendMail('SiteAdmin@globalconstructionanddemolition.com', userEmail, 'Your bid has been approved.', 'Your bid has been approved.')
             // window.location.reload()
 
@@ -82,6 +83,7 @@ function rejectBid(bidId) {
         documentRef.get().then(doc => {
             let data = doc.data();
             let userEmail = data.userEmail;
+            showAlert('Bid rejected successfully, Please reload the page the update the record')
             sendMail('SiteAdmin@globalconstructionanddemolition.com', userEmail, 'Your bid has been rejected.', 'Your bid has been rejected by admin.')
             // window.location.reload()
         })
