@@ -33,7 +33,8 @@ function populateRfpTable(data) {
                 data.userEmail,
                 // data.role,
                 data.message,
-                data.status ? 'Approved' : 'Pending',
+                // data.status ? 'Approved' : 'Pending',
+                data.status,
                 `
                     <a href="${data.formUrl}" target ="_blank">View Form</a>
                 `,
@@ -52,16 +53,18 @@ function acceptBid(bidId) {
     let collectionRef = db.collection("bids");
     let documentRef = collectionRef.doc(bidId);
     documentRef.update({
-        status: true
+        status: 'Approved'
     }).then(() => {
         hideLoader();
         // console.log('done')
         documentRef.get().then(doc => {
             let data = doc.data();
             let userEmail = data.userEmail;
-            showAlert('Bid accepted successfully, Please reload the page the update the record')
+            showAlert('Bid accepted successfully, Reloading.. to update the record')
             sendMail('SiteAdmin@globalconstructionanddemolition.com', userEmail, 'Your bid has been approved.', 'Your bid has been approved.')
-            // window.location.reload()
+            setTimeout(() => {
+                window.location.reload()
+            }, 1000);
 
         })
     })
@@ -76,16 +79,18 @@ function rejectBid(bidId) {
     let collectionRef = db.collection("bids");
     let documentRef = collectionRef.doc(bidId);
     documentRef.update({
-        status: false
+        status: 'Rejected'
     }).then(() => {
         hideLoader();
         // console.log('done')
         documentRef.get().then(doc => {
             let data = doc.data();
             let userEmail = data.userEmail;
-            showAlert('Bid rejected successfully, Please reload the page the update the record')
+            showAlert('Bid rejected successfully, Reloading.. to update the record')
             sendMail('SiteAdmin@globalconstructionanddemolition.com', userEmail, 'Your bid has been rejected.', 'Your bid has been rejected by admin.')
-            // window.location.reload()
+            setTimeout(() => {
+                window.location.reload()
+            }, 1000);
         })
     })
         .catch((error) => {

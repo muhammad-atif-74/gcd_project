@@ -51,7 +51,7 @@ function submitBid() {
                                     role: data.role,
                                     message: message.value,
                                     formUrl: downloadURL,
-                                    status: false,
+                                    status: 'Pending',
                                     submittedAt: Date.now()
                                 })
                                     .then(() => {
